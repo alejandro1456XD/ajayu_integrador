@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class EntityState 
+public abstract class EntityState
 {
     protected StateMachine stateMachine;
     protected string animBoolName;
@@ -37,5 +37,4 @@ public abstract class EntityState
     {
         triggerCalled = true;
     }
-
 }
