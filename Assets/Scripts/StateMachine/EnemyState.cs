@@ -18,10 +18,13 @@ public class EnemyState : EntityState
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            // CORREGIDO: 'attackState' con 'a' minúscula
+            
             stateMachine.ChangeState(enemy.attackState);
         }
 
         anim.SetFloat("moveAnimSpeedMultiplier", enemy.moveAnimSpeedMultiplier);
+
+       
+        anim.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
     }
 }

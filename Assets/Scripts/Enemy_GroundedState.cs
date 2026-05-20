@@ -6,5 +6,13 @@ public class Enemy_GroundedState : EnemyState
     {
     }
 
-   
+    public override void Update()
+    {
+        base.Update();
+        
+        if(enemy.PlayerDetection() == true)
+            stateMachine.ChangeState(enemy.battleState);
+
+    }
+
 }

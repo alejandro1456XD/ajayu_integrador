@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 15078499}
   - component: {fileID: 15078501}
   - component: {fileID: 15078500}
+  - component: {fileID: 15078502}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -229,6 +230,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &15078502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15078498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e085c87aa99697a44847bd841a35fbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &119282647
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +424,7 @@ GameObject:
   - component: {fileID: 274070543}
   - component: {fileID: 274070545}
   - component: {fileID: 274070546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,11 +443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0795899c6f9fd17499ac7d9df420624b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: 1.4
-  wallCheckDistance: 0.4
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  groundCheckDistance: 1.4
+  wallCheckDistance: 0.4
   groundCheck: {fileID: 274070544}
   primaryWallCheck: {fileID: 622737139}
   secondaryWallCheck: {fileID: 1178330335}
@@ -61108,7 +61121,7 @@ GameObject:
   - component: {fileID: 1915541903}
   - component: {fileID: 1915541902}
   - component: {fileID: 1915541901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemi_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61149,8 +61162,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.25397655}
-  m_Size: {x: 0.5913577, y: 1.5079461}
+  m_Offset: {x: 0, y: -0.25036326}
+  m_Size: {x: 0.5913577, y: 1.5007193}
   m_Direction: 0
 --- !u!50 &1915541902
 Rigidbody2D:
@@ -61191,17 +61204,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca80f7b6c0664a4c86b7816406537d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: 0.5
-  wallCheckDistance: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  groundCheckDistance: 0.5
+  wallCheckDistance: 0.5
   groundCheck: {fileID: 835877494}
   primaryWallCheck: {fileID: 1915541904}
   secondaryWallCheck: {fileID: 1915541904}
+  battleMoveSpeed: 3
+  attackDistance: 2
   idleTime: 2
   moveSpeed: 1.4
   moveAnimSpeedMultiplier: 1
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerCheck: {fileID: 1915541904}
+  playerCheckDistance: 10
 --- !u!4 &1915541904
 Transform:
   m_ObjectHideFlags: 0
