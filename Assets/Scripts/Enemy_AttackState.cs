@@ -6,14 +6,12 @@ public class Enemy_AttackState : EnemyState
     {
     }
 
+
     public override void Update()
     {
         base.Update();
 
         if (triggerCalled)
-        {
-            
-            stateMachine.ChangeState(enemy.idleState);
-        }
+            stateMachine.ChangeState(enemy.battleState);
     }
 }

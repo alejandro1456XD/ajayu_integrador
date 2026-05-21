@@ -6,6 +6,7 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     protected StateMachine stateMachine;
 
+
     private bool facingRight = true;
     public int facingDir { get; private set; } = 1;
 
@@ -27,19 +28,21 @@ public class Entity : MonoBehaviour
         stateMachine = new StateMachine();
     }
 
+
     protected virtual void Start()
     {
+
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         HandleCollisionDetection();
         stateMachine.UpdateActiveState();
     }
 
-    public void CallAnimationTrigger()
+    public void CurrentStateAnimationTrigger()
     {
-        stateMachine.currentState.CallAnimationTrigger();
+        stateMachine.currentState.AnimationTrigger();
     }
 
     public void SetVelocity(float xVelocity, float yVelocity)
@@ -48,11 +51,11 @@ public class Entity : MonoBehaviour
         HandleFlip(xVelocity);
     }
 
-    private void HandleFlip(float xVelocity)
+    public void HandleFlip(float xVelcoity)
     {
-        if (xVelocity > 0 && facingRight == false)
+        if (xVelcoity > 0 && facingRight == false)
             Flip();
-        else if (xVelocity < 0 && facingRight)
+        else if (xVelcoity < 0 && facingRight)
             Flip();
     }
 
@@ -67,17 +70,17 @@ public class Entity : MonoBehaviour
     {
         groundDetected = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
 
+
         if (secondaryWallCheck != null)
         {
             wallDetected = Physics2D.Raycast(primaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround)
                         && Physics2D.Raycast(secondaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
         }
         else
-        {
-            
             wallDetected = Physics2D.Raycast(primaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
-        }
+
     }
+
 
     protected virtual void OnDrawGizmos()
     {
