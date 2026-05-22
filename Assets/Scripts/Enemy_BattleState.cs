@@ -63,4 +63,6 @@ public class Enemy_BattleState : EnemyState
         return player.position.x > enemy.transform.position.x ? 1 : -1;
     }
 
+
+
 }
