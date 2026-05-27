@@ -52,7 +52,7 @@ public class Entity_Health : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        Debug.Log("Entity died!");
+        entity.EntiityDeath();
     }
 
     private Vector2 CalculateKnockbac(float damage, Transform damageDealer)
